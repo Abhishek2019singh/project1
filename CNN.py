@@ -138,13 +138,6 @@ Accuracy=model.evaluate(X_test,y_test)
 
 print("Accuracy is :-",Accuracy[1]*100)
 
-
-# In[23]:
-
-
-#os.system('echo{} | cat /Users/AKS/Desktop/accuracy.txt'.format(str(int(Accuracy[1]))))
-
-
 # In[41]:
 
 
@@ -155,10 +148,5 @@ except:
    print(end="")
 finally:
     f.close()
-
-
-# In[ ]:
-
-
 
 
