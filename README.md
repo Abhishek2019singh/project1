@@ -17,4 +17,24 @@ Job ml3 trains the model and predicts the accuracy of the model.
 Job ml4 checks if the desired accuracy(In my case it is 95+) is not reached then tweaks the model to get it.
 Job ml5 retrains the model an notifies the developer by sending email that the desired accuracy is reached and the best model is created.
 Job ml6 is for monitoring in case the container fails due to any reason this job automatically start the container again from where the last trained model left.
+
 ![image](https://user-images.githubusercontent.com/64477686/128171523-80d1d5ec-48ed-43f3-b524-0d0ef0bccc1e.png)
+
+This picture shows a Dockerfile and to build this into docker image following commands:
+**docker build -t --name container_name:version /root/foldername/**
+
+Pull the code from the GitHub using Poll SCM build trigger and copy it to the root directory using shell execute.
+
+
+![image](https://user-images.githubusercontent.com/64477686/128600662-ed11569d-7443-4ad0-bb99-f7caade00543.png)
+
+
+Code for the reference can be found in my GitHub repo:-
+
+https://github.com/Abhishek2019singh/project1/blob/main/CNN.py
+
+
+
+
+
+
