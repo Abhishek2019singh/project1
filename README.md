@@ -137,7 +137,3 @@ At last the complete build pipeline view of my project :
 
 
 
-GitHub link for the reference :
-
-https://github.com/Abhishek2019singh/project1
-
