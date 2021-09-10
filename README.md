@@ -26,6 +26,7 @@ This picture shows a Dockerfile and to build this into docker image following co
 Pull the code from the GitHub using Poll SCM build trigger and copy it to the root directory using shell execute.
 
 
+
 ![Screenshot (193)](https://user-images.githubusercontent.com/64477686/132846717-f0a3edaa-2e48-477e-b92b-f1953db37d94.png)
 
 ![Screenshot (194)](https://user-images.githubusercontent.com/64477686/132846926-5daf6302-ffb9-489d-83b4-17066dc72d44.png)
@@ -33,7 +34,9 @@ Pull the code from the GitHub using Poll SCM build trigger and copy it to the ro
 ![Screenshot (195)](https://user-images.githubusercontent.com/64477686/132846955-8b9d3e7d-7415-4359-aca4-d7572d84a3a9.png)
 
 
+
 The Job project1_step2 by looking at the code automatically starts the required container image providing the environment to deploy and train the code (In my case it will launch container containing all the pre-requisite libraries for CNN).
+
 
 
 ![Screenshot (196)](https://user-images.githubusercontent.com/64477686/132847453-d2c43d87-7385-4fac-860e-03e47ea11fbc.png)
@@ -43,6 +46,7 @@ The Job project1_step2 by looking at the code automatically starts the required 
 ![Screenshot (198)](https://user-images.githubusercontent.com/64477686/132848250-38db0b16-7a81-4a85-9bbf-0704c1b5de7c.png)
 
 
+
 Job project1_step3 trains the model and predicts the accuracy of the model.
 
 Code for the reference can be found in my GitHub repo:-
@@ -50,27 +54,40 @@ Code for the reference can be found in my GitHub repo:-
 https://github.com/Abhishek2019singh/project1/blob/main/CNN.py
 
 
+
+
 ![Screenshot (201)](https://user-images.githubusercontent.com/64477686/132848863-2f67d0d1-e1ce-42e8-b2fa-ea3cd5b29f6c.png)
 
 ![Screenshot (202)](https://user-images.githubusercontent.com/64477686/132848882-f781094b-2979-4072-b537-d5d2e7168a43.png)
 
 
+
 Here data.txt file stores accuracy of the model which will be used to compare with the desired accuracy and further actions will be taken.
+
 
 
 ![Screenshot (214)](https://user-images.githubusercontent.com/64477686/132850209-04e021a7-cc13-4244-8836-42e216433f47.png)
 
+
+
 Job project1_step4 checks if the desired accuracy(In my case it is 95+) is reached or not then tweaks the model to get it.
+
+
 
 ![Screenshot (204)](https://user-images.githubusercontent.com/64477686/132852324-6cbbe187-d129-435c-9e8b-1cac1c382e39.png)
 
 ![Screenshot (205)](https://user-images.githubusercontent.com/64477686/132852344-cefab1f4-4d5b-4cb1-941c-70aee63076c8.png)
 
 
+
 Here i have used various Linux commands to compare the accuracy and tweak the model as per requirement it can be done by python code but to make it simple i had used Linux commands instead.
 
 
+
 Job project1_step5 retrains the model an notifies the developer by sending email that the desired accuracy is reached and the best model is created.
+
+
+
 
 ![Screenshot (207)](https://user-images.githubusercontent.com/64477686/132852660-256d1817-b41d-4bcf-97ca-ce690e7977fc.png)
 
@@ -79,23 +96,42 @@ Job project1_step5 retrains the model an notifies the developer by sending email
 ![Screenshot (213)](https://user-images.githubusercontent.com/64477686/132852722-993cc82d-0230-459e-9b53-56c7e2fd6408.png)
 
 
+
+
 For sending mail i have used python code and the received mail after best trained model for reference is attached below:-
+
+
+
 
 ![image](https://user-images.githubusercontent.com/64477686/132852843-f7be1d6a-bff8-4f15-a7ea-42964dd77c88.png)
 
 ![Screenshot (215)](https://user-images.githubusercontent.com/64477686/132853430-0fae088c-968a-4645-922f-0a83819cafc2.png)
 
 
+
+
 Job project_step6 is for monitoring in case the container fails due to any reason this job automatically start the container again from where the last trained model left.
+
+
+
 
 ![Screenshot (211)](https://user-images.githubusercontent.com/64477686/132853541-12f75bb0-8cbd-460b-8287-a2b254ff485e.png)
 
+
+
+
 I have used build periodically trigger to monitor the environment for any fail-safe which checks it every minute and in case of failure starts the container automatically.
+
+
+
 
 ![Screenshot (212)](https://user-images.githubusercontent.com/64477686/132853561-666e67f7-bad8-4dd2-9c95-5aabb092154e.png)
 
 
+
+
 At last the complete build pipeline view of my project :
+
 
 ![Screenshot (190)](https://user-images.githubusercontent.com/64477686/132853655-af512052-3cb3-4ee6-9b37-dc09622a0a27.png)
 
